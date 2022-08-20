@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <title>Contract Detail List</title>
+</head>
+<body>
+<h1>List of contract detail</h1>
+<br>
+<form th:action = "@{'/home/contract_detail'}" method = "get">
+    <input name = "contractIdSearch" placeholder="Enter start date">
+    <input name = "contractDetailQuantitySearch" placeholder="Enter quantiy">
+    <button type="submit">Search Contract</button>
+</form>
+<br>
+<a th:href="@{/home/contractDetail/create}">Add new contract detail</a>
+<br>
+<table class="table table-stript">
+    <tr style="background: wheat">
+        <th>STT</th>
+        <th>Contract start date</th>
+        <th>Attach service</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each = "contractDetail, status: ${contractDetails}">
+        <td th:text = "${status.index + 1}"></td>
+        <td th:text = "${contractDetail.getContract().getStartDate()}"></td>
+        <td th:text = "${contractDetail.getAttach_service().getName()}"></td>
+        <td th:text = "${contractDetail.getQuantity()}"></td>
+        <td>
+            <button type="button" class="btn btn-danger">
+                <a th:href="@{contractDetail/edit(id=${contractDetail.getId()})}">Edit</a>
+            </button>
+            &nbsp;
+            <button type="button"
+                    th:onclick="|deleteContractDetail(${contractDetail.getId()})|"
+                    class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Delete
+            </button>
+        </td>
+    </tr>
+</table>
+<div>
+    <a th:href = "@{'/home/contractDetail'(page=${contractDetails.number - 1}, contract_id = ${contractIdSearch}, quantity = ${contractDetailQuantitySearch})}" th:if="${contractDetails.hasPrevious()}">Previous</a>
+    <span th:text="${contractDetails.number + 1}"></span>/<span th:text="${contractDetails.totalPages}"></span>
+    <a th:href = "@{'/home/contractDetail'(page=${contractDetails.number + 1}, contract_id = ${contractIdSearch}, quantity = ${contractDetailQuantitySearch})}" th:if="${contractDetails.hasNext()}">Next</a>
+</div>
+<a href="/home">Back to home</a>
+
+<!-- Modal -->
+<form th:action = "@{/home/contractDetail/delete}" method="get">
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text"  hidden name="idDelete" id="idDelete">
+                    Would you like to delete : <span id="idD" style="color: red"></span>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    function deleteContractDetail(id) {
+        document.getElementById("idD").innerText =id;
+        document.getElementById("idDelete").value =id;
+    }
+</script>
+</body>
+</html>
