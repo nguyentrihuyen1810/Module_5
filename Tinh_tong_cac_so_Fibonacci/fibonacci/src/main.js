@@ -1,12 +1,12 @@
-var x = 1;
-var y = 0;
-var z;
-var sum = 0;
-for (var i = 0; i <= 50; i++) {
-    z = x + y;
-    x = y;
-    y = z;
-    console.log(z);
-    sum = sum + z;
+function fibonacci(count) {
+    if (count == 1 || count == 2)
+        return 1;
+    return fibonacci(count - 1) + fibonacci(count - 2);
 }
-console.log("Sum = " + sum);
+var count = 50;
+var sumFibonacci = 0;
+for (var i = 0; i <= count; i++) {
+    console.log(fibonacci(i));
+    sumFibonacci = sumFibonacci + fibonacci(i);
+}
+console.log("Sum = " + sumFibonacci);
