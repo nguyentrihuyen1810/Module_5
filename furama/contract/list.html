@@ -30,15 +30,99 @@
         <th>Service</th>
         <th>Action</th>
     </tr>
-    <tr th:each = "contract, status: ${contracts}">
-        <td th:text = "${status.index + 1}"></td>
-        <td th:text = "${contract.getStartDate()}"></td>
-        <td th:text = "${contract.getEndDate()}"></td>
-        <td th:text = "${contract.getDeposit()}"></td>
-        <td th:text = "${contract.getTotalMoney()}"></td>
-        <td th:text = "${contract.getEmployee().getName()}"></td>
-        <td th:text = "${contract.getCustomer().getName()}"></td>
-        <td th:text = "${contract.getService().getName()}"></td>
+    <tr>
+        <td>1</td>
+        <td>15/08/2022</td>
+        <td>25/08/2022</td>
+        <td>10000000</td>
+        <td>25000000</td>
+        <td>Nguyen Van A</td>
+        <td>Mai Van Hoang</td>
+        <td>Villa Beach Front</td>
+        <td>
+            <button type="button" class="btn btn-danger">
+                <a th:href="@{contract/edit(id=${contract.getId()})}">Edit</a>
+            </button>
+            &nbsp;
+            <button type="button"
+                    th:onclick="|deleteContract(${contract.getId()})|"
+                    class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Delete
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>12/08/2022</td>
+        <td>13/08/2022</td>
+        <td>4000000</td>
+        <td>4000000</td>
+        <td>Do My Yen</td>
+        <td>Ta Huy Viet</td>
+        <td>Room Twin 01</td>
+        <td>
+            <button type="button" class="btn btn-danger">
+                <a th:href="@{contract/edit(id=${contract.getId()})}">Edit</a>
+            </button>
+            &nbsp;
+            <button type="button"
+                    th:onclick="|deleteContract(${contract.getId()})|"
+                    class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Delete
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>15/07/2022</td>
+        <td>20/07/2022</td>
+        <td>10000000</td>
+        <td>25000000</td>
+        <td>Doan Minh Huong</td>
+        <td>Ta Huy Viet</td>
+        <td>Villa No Beach Front</td>
+        <td>
+            <button type="button" class="btn btn-danger">
+                <a th:href="@{contract/edit(id=${contract.getId()})}">Edit</a>
+            </button>
+            &nbsp;
+            <button type="button"
+                    th:onclick="|deleteContract(${contract.getId()})|"
+                    class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Delete
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>30/08/2022</td>
+        <td>04/09/2022</td>
+        <td>10000000</td>
+        <td>30000000</td>
+        <td>Doan Minh Huong</td>
+        <td>Truong Gia Uy</td>
+        <td>House Princess 02</td>
+        <td>
+            <button type="button" class="btn btn-danger">
+                <a th:href="@{contract/edit(id=${contract.getId()})}">Edit</a>
+            </button>
+            &nbsp;
+            <button type="button"
+                    th:onclick="|deleteContract(${contract.getId()})|"
+                    class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                Delete
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>24/08/2022</td>
+        <td>28/08/2022</td>
+        <td>2000000</td>
+        <td>8000000</td>
+        <td>Bui Ta Hien</td>
+        <td>Nguyen Thao Van</td>
+        <td>House Princess 01</td>
         <td>
             <button type="button" class="btn btn-danger">
                 <a th:href="@{contract/edit(id=${contract.getId()})}">Edit</a>
