@@ -1,0 +1,11 @@
+<input type = "text" [(ngModel)]="number1")]>
+<input type = "text" [(ngModel)]="number2")]>
+<br><br>
+<button (click)="equal('cong')">Addition(+)</button>
+<button (click)="equal('tru')">Subtraction(-)</button>
+<button (click)="equal('nhan')">Multiplication(X)</button>
+<button (click)="equal('chia')">Division(/)</button>
+<button (click)="equal(number1, number2, result)">=</button>
+
+<br>
+<span>{{result}}</span>
