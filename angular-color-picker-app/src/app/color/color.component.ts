@@ -15,20 +15,7 @@ export class ColorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeColor(color: string) {
-    switch (color) {
-      case 'blue':
-        this.color = 'blue';
-        break;
-      case 'black':
-        this.color = 'black';
-        break;
-      case 'aqua':
-        this.color = 'aqua';
-        break;
-      case 'pink':
-        this.color = 'pink';
-        break;
-    }
+  changeColor(target: any) {
+    this.color = target.value()
   }
 }
