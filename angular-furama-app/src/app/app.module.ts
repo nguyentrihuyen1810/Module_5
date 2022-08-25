@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NatigationComponent } from './natigation/natigation.component';
 import { ServiceComponent } from './service/service.component';
-import { ServiceComponent } from './edit-service/service.component';
+import { EditServiceComponent } from './edit-service/edit-service.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import { ServiceComponent } from './edit-service/service.component';
     HeaderComponent,
     FooterComponent,
     NatigationComponent,
-    ServiceComponent,
-    ServiceComponent
+    EditServiceComponent,
+    EditServiceComponent
   ],
   imports: [
     BrowserModule,
