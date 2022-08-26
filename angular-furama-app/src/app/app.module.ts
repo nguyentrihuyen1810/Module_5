@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NatigationComponent } from './natigation/natigation.component';
 import { ServiceComponent } from './service/service.component';
 import { EditServiceComponent } from './edit-service/edit-service.component';
+import { AddServiceComponent } from './add-service/add-service.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditServiceComponent } from './edit-service/edit-service.component';
     FooterComponent,
     NatigationComponent,
     EditServiceComponent,
-    EditServiceComponent
+    EditServiceComponent,
+    AddServiceComponent
   ],
   imports: [
     BrowserModule,

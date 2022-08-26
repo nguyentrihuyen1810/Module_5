@@ -1,11 +1,27 @@
-<p>Student profile</p>
-<h3>Student name: {{student.name}}</h3>
-<h3>Student birthday: {{student.birthday}}</h3>
-<h3>Student gender: {{student.gender}}</h3>
-<h3>Student mask: {{student.mask}}</h3>
-<h3>Student avatar:
-  <img [src]="student.image" style="max-width: 100%">
-</h3>
+<h1 style = "text-align: center">List student</h1>
+<table class="table">
+  <tr class="table-primary">
+    <th>Name</th>
+    <th>Birthday</th>
+    <th>Gender</th>
+    <th>Mask</th>
+    <th>Avatar</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let std of student">
+    <td>{{std.name}}</td>
+    <td>{{std.birthday}}</td>
+    <td>{{std.gender}}</td>
+    <td>{{std.mask}}</td>
+    <td>
+      <img style="width: 50px" [src] ="std.avatar"/>
+    </td>
+    <td>
+      <button class="btn btn-success">Edit</button>
+      <button class="btn btn-danger" style="margin-left: 10px">Delete</button>
+    </td>
+  </tr>
+</table>
 
 
 

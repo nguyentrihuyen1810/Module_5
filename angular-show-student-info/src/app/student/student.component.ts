@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Student} from '../student';
 
 export interface Student {
   name?: string;
   birthday?: string;
   gender?: string;
-  mask?: string;
+  mask?: number;
   avatar?: string;
 }
 
@@ -15,13 +14,20 @@ export interface Student {
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-  student: Student = {
+  student: Student [] = [{
     name: 'Nguyen Van A',
     birthday: '12/08/1990',
     gender: 'Nam',
     mask: 9,
     avatar: 'https://tse1.mm.bing.net/th?id=OIP.69XgUOQksMxLalHhwoJ84gAAAA&pid=Api&P=0'
-  };
+  },
+  {
+    name: 'Nguyen Thi B',
+    birthday: '25/05/1990',
+    gender: 'Nu',
+    mask: 8,
+    avatar: 'https://tse1.mm.bing.net/th?id=OIP.aESOK7HNDdNvGvigNVov5gAAAA&pid=Api&P=0'
+  }];
 
   constructor() { }
 
