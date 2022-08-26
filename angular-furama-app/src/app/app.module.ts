@@ -9,6 +9,7 @@ import { NatigationComponent } from './natigation/natigation.component';
 import { ServiceComponent } from './service/service.component';
 import { EditServiceComponent } from './edit-service/edit-service.component';
 import { AddServiceComponent } from './add-service/add-service.component';
+import { ListCustomerComponent } from './list-customer/list-customer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddServiceComponent } from './add-service/add-service.component';
     NatigationComponent,
     EditServiceComponent,
     EditServiceComponent,
-    AddServiceComponent
+    AddServiceComponent,
+    ListCustomerComponent
   ],
   imports: [
     BrowserModule,
