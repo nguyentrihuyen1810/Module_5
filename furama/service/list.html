@@ -6,96 +6,169 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <title>Service List</title>
+
+    <style>
+        header img {
+            width: 95%;
+            height: 250px;
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+
+        .list {
+            margin-top: 20px;
+            margin-left: 150px;
+        }
+    </style>
 </head>
 <body>
-<h1>List of service</h1>
-<br>
-<form th:action = "@{'/home/service'}" method = "get">
-    <input name = "serviceNameSearch" placeholder="Enter name service">
-    <select name = "serviceTypeIdSearch">
-        <option value="">--- Select service type ---</option>
-        <option th:each = "svt:${serviceTypeList}" th:value = "${svt.id}" th:text="${svt.name}"></option>
-    </select>
-    <button type="submit">Search Service</button>
-</form>
-<br>
-<a th:href="@{/home/service/create}">Add new service</a>
-<br>
-<table class="table table-stript">
-    <tr style="background: wheat">
-        <th>STT</th>
-        <th>Name</th>
-        <th>Area</th>
-        <th>Cost</th>
-        <th>Max people</th>
-        <th>Rent type</th>
-        <th>Service type</th>
-        <th>Standard room</th>
-        <th>Description</th>
-        <th>Pool area</th>
-        <th>Number of float</th>
-        <th>Action</th>
-    </tr>
-    <tr th:each = "service, status: ${services}">
-        <td th:text = "${status.index + 1}"></td>
-        <td th:text = "${service.getName()}"></td>
-        <td th:text = "${service.getArea()}"></td>
-        <td th:text = "${service.getCost()}"></td>
-        <td th:text = "${service.getMaxPeople()}"></td>
-        <td th:text = "${service.getRent_type().getName()}"></td>
-        <td th:text = "${service.getService_type().getName()}"></td>
-        <td th:text = "${service.getStandardRoom()}"></td>
-        <td th:text = "${service.getDescriptionOtherConvenience()}"></td>
-        <td th:text = "${service.getPoolArea()}"></td>
-        <td th:text = "${service.getNumberOfFloors()}"></td>
-        <td>
-            <button type="button" class="btn btn-danger">
-                <a th:href="@{service/edit(id=${service.getId()})}">Edit</a>
-            </button>
-            &nbsp;
-            <button type="button"
-                    th:onclick="|deleteService(${service.getId()})|"
-                    class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                Delete
-            </button>
-        </td>
-    </tr>
-</table>
-<div>
-    <a th:href = "@{'/home/service'(page=${services.number - 1}, name = ${serviceNameSearch}, service_type_id = ${serviceTypeIdSearch})}" th:if="${services.hasPrevious()}">Previous</a>
-    <span th:text="${services.number + 1}"></span>/<span th:text="${services.totalPages}"></span>
-    <a th:href = "@{'/home/service'(page=${services.number + 1}, name = ${serviceNameSearch}, service_type_id = ${serviceTypeIdSearch})}" th:if="${services.hasNext()}">Next</a>
-</div>
-<a href="/home">Back to home</a>
-
-<!-- Modal -->
-<form th:action = "@{/home/service/delete}" method="get">
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+<header>
+    <img src="https://www.dananggolfguide.com/wp-content/uploads/2019/10/Furama_Resort_Exterior_Ocean-Pool.jpg">
+</header>
+<div class = "list">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.DqID_tJftmFo9D2iTmPtbQHaFj&pid=Api&P=0" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">OCEAN SUITE</h5>
+                    <p class="card-text">Room size: 85.0m<p8><sup>2</sup></p8></p>
                 </div>
-                <div class="modal-body">
-                    <input type="text"  hidden name="idDelete" id="idDelete">
-                    Would you like to delete : <span id="idD" style="color: red"></span>?
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button type="submit" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img src="https://www.shanabythebeach.com/wp-content/uploads/2021/07/Studio_ocean_18-scaled.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">OCEAN STUDIO SUITE</h5>
+                    <p class="card-text">Room size: 40.1m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img src="https://www.its.de/pibe-media/its/hotel/XA1162_W20_3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">OCEAN DELUXE</h5>
+                    <p class="card-text">Room size: 43.7m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
                 </div>
             </div>
         </div>
     </div>
-</form>
-<script>
-    function deleteService(id) {
-        document.getElementById("idD").innerText =id;
-        document.getElementById("idDelete").value =id;
-    }
-</script>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style = "margin-top: 20px">
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.-586Yheqs5YrvN5jeqThFQHaE8&pid=Api&P=0" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">LAGOON SUPERIOR</h5>
+                    <p class="card-text">Room size: 40.1m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img style = "height: 150px" src="https://phukethotels.impiana.com.my/wp-content/uploads/sites/194/2015/08/JD48363-HDR-Edit-960x380.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">GARDEN SUPERIOR</h5>
+                    <p class="card-text">Room size: 40.1m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img style = "height: 180px" src="https://www.sudamalaresorts.com/bali/wp-content/uploads/sites/2/2015/06/main_deluxe_garden_suites_03.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">GARDEN DELUXE</h5>
+                    <p class="card-text">Room size: 48.7m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" style = "margin-top: 20px">
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img src="https://www.thepostoakhotel.com/img/resort/875x600/Presidential-Suite-LIving-Room_04.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">PRESIDENTIAL SUITE</h5>
+                    <p class="card-text">Room size: 110m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img src="https://cdn.wheretostay.com/prop_photos/0/226/Sailrock-Resort-Beach-Front-Villa-Turks-and-Caicos-05-Sailrock-Resort-Beachfront-Villa-Outdoor-Pool-and-Terrace-2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">BEACH FRONT VILLAS</h5>
+                    <p class="card-text">Room size: 900m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100" style="width: 60%">
+                <img src="https://i1.wp.com/thebalisun.com/wp-content/uploads/2020/07/219469803.jpg?fit=1024%2C661&ssl=1" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">POOL VILLAS</h5>
+                    <p class="card-text">Room size: 370m<p8><sup>2</sup></p8></p>
+                </div>
+                <div class="card-footer" style="text-align: right">
+                    <small class="text-muted">
+                        <a href="#">Edit</a> &nbsp;
+                        <a href="#">Delete</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
