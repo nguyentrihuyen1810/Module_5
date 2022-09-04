@@ -7,16 +7,19 @@ import { StudentComponent } from './student/student.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    StudentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        StudentComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
+    providers: [],
+    exports: [
+        StudentComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

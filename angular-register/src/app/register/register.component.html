@@ -1,0 +1,88 @@
+<h2>Form Register</h2>
+<form>
+  <div>
+    <label>Email</label>
+    <input type = "email" formControlName = "email">
+    <div *ngIf="!registerForm.get('email')?.valid && (registerForm.get('email')?.touched||registerForm.get('email')?.dirty)">
+      <div [hidden]="!registerForm.get('email').errors.required">
+        <small style="color: red">You have not entered your email.</small>
+      </div>
+      <div [hidden]="!registerForm.get('email').errors.pattern">
+        <small style="color: red" >The email you entered is not in the correct format.</small>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>Password</label>
+    <input type = "password" formControlName = "password">
+    <div *ngIf="!registerForm.get('password')?.valid && (registerForm.get('password')?.touched||registerForm.get('password')?.dirty)">
+      <div [hidden]="!registerForm.get('password').errors.required">
+        <small style="color: red">No password entered.</small>
+      </div>
+      <div [hidden]="!registerForm.get('password').errors.pattern">
+        <small style="color: red" >Passwords must be at least 6 characters.</small>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <label>Confirm Password</label>
+      <input type="password" formControlName="confirmPassword">
+    </div>
+    <div>
+      <small style="color: red" *ngIf="registerForm.hasError('passwordNotMatch', ['pass'])">Password does not match.</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Country</label>
+    <select formControlName="country">
+      <option value="{{country}}" *ngFor="let country of countryList">{{country}}</option>
+    </select>
+    <div *ngIf="!registerForm.get('country')?.valid && (registerForm.get('country')?.touched || registerForm.get('country')?.dirty)">
+      <small style="color: red;">No country selected.</small>
+    </div>
+  </div>
+
+  <div>
+    <label>Age</label>
+    <input type="text" formControlName="age">
+    <div *ngIf="!registerForm.get('age')?.valid && (registerForm.get('age')?.touched || registerForm.get('age')?.dirty)">
+      <div [hidden]="!registerForm.get('age').errors.required">
+        <small style="color: red" >Age not entered.</small>
+      </div>
+      <div [hidden]="!registerForm.get('age').errors.min">
+        <small style="color: red">Age must be over 18.</small>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <span>Gender </span>
+      <input type="radio" name="gender" formControlName="gender" value="male">Male
+      <input type="radio" name="gender" formControlName="gender" value="female">Female
+    </div>
+    <div *ngIf="!registerForm.get('gender')?.valid && (registerForm.get('gender')?.touched || registerForm.get('gender')?.dirty)">
+      <div [hidden]="!registerForm.get('gender').errors.required">
+        <small style="color: red" >No gender selected.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="text" formControlName="phone">
+    <div *ngIf="!registerForm.get('phone')?.valid && (registerForm.get('phone')?.touched || registerForm.get('phone')?.dirty)">
+      <div [hidden]="!registerForm.get('phone').errors.required">
+        <small style="color: red">No phone number entered.</small>
+      </div >
+      <div [hidden]="!registerForm.get('phone').errors.pattern">
+        <small class="form-text" style="color: red; font-style: italic" >Invalid phone number.</small>
+      </div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="registerForm.invalid">Save</button>
+</form>
