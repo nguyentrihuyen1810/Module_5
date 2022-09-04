@@ -14,6 +14,7 @@ import { FuramaComponent } from './furama/furama.component';
 import { ListServiceComponent } from './list-service/list-service.component';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddContractComponent } from './add-contract/add-contract.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     FuramaComponent,
     ListServiceComponent,
     EditCustomerComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AddContractComponent
   ],
   imports: [
     BrowserModule,
