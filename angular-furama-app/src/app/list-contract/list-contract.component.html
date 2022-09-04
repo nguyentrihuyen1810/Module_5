@@ -64,58 +64,99 @@
   </div>
 </header>
 
-<h1 style="text-align: center; margin-top: 20px; color: lightseagreen">Add contract</h1><br>
-<form style = "width: 100%; height: 250px; float: left">
-  <div style = "float: left; height: 300px; width: 45%; margin-top: 20px">
-    <div class="input-group mb-3" style="width: 80%; margin-left: 110px">
-      <span class="input-group-text" id="basic-addon1">Contract Id</span>
-      <input type="text" class="form-control" aria-label="Contract Id" aria-describedby="basic-addon1">
-    </div>
-    <div class="input-group mb-3" style="width: 80%; margin-left: 110px">
-      <input type="text" class="form-control" aria-describedby="basic-addon2">
-      <span class="input-group-text" id="basic-addon2">Customer Name</span>
-    </div>
-
-    <div class="input-group mb-3" style="width: 80%; margin-left: 110px">
-      <span class="input-group-text">Employee Name</span>
-      <input type="text" class="form-control" aria-label="Employee Name">
-    </div>
-
-    <div class="input-group mb-3" style="width: 80%; margin-left: 110px">
-      <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect01">Service</label>
-      </div>
-      <select class="custom-select" id="inputGroupSelect01">
-        <option selected>Choose...</option>
-        <option value="1">Villa Beach Front</option>
-        <option value="2">House Princess 01</option>
-        <option value="3">Room Twin 01</option>
-        <option value="4">Villa No Beach Front</option>
-        <option value="5">House Princess 02</option>
-        <option value="6">Room Twin 02</option>
-      </select>
-    </div>
-  </div>
-
-  <div style= "float: left; height: 300px; width: 50%; margin-top: 20px">
-    <div class="input-group mb-3" style="width: 80%; margin-left: 100px">
-      <input type="date" class="form-control">
-      <span class="input-group-text">Start date</span>
-    </div>
-
-    <div class="input-group" style="width: 80%; margin-left: 100px">
-      <span class="input-group-text">End date</span>
-      <input type="date" class="form-control">
-    </div>
-    <br>
-    <div class="input-group mb-3" style="width: 80%; margin-left: 100px">
-      <input type="text" class="form-control">
-      <span class="input-group-text">Deposit</span>
-    </div>
-  </div>
-</form>
-<button style = "margin-top: 20px; float: left; margin-left: 1000px" type="submit" class="btn btn-success">Save</button>
-<button style = "margin-top: 20px; margin-left: 20px" type="reset" class="btn btn-warning">Reset</button>
+<body>
+<h3 style= "text-align: center; margin-top: 30px; margin-bottom: 30px; color: lightseagreen">DANH SÁCH HỢP ĐỒNG</h3>
+<div style = "height: 80px; width: 100%">
+  <nav class="navbar navbar-light bg-light" style = "width: 30%; float: left; margin-left: 20px">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  <button style = "float: left; margin-left: 800px; margin-top: 20px" type="button" class="btn btn-success">+ Thêm mới hợp đồng</button>
+</div>
+<table class="table table-hover" style = "margin-left: 15px;  width: 98%">
+  <thead style = "background: lightseagreen">
+  <tr>
+    <th scope="col">STT</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Service</th>
+    <th scope="col">Start date</th>
+    <th scope="col">End date</th>
+    <th scope="col">Deposit</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Nguyễn Thị Hào</td>
+    <td>Hồ Thị Yến</td>
+    <td>Room Twin 01</td>
+    <td>08-12-2020</td>
+    <td>08-12-2020</td>
+    <td>0</td>
+    <td>
+      <button type="button" class="btn btn-warning">Edit</button>
+      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">1</th>
+    <td>Phạm Xuân Diệu</td>
+    <td>Võ Công Toản</td>
+    <td>Room Twin 02</td>
+    <td>25-02-2021</td>
+    <td>01-03-2021</td>
+    <td>0</td>
+    <td>
+      <button type="button" class="btn btn-warning">Edit</button>
+      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Dương Văn Quan</td>
+    <td>Lê Văn Bình</td>
+    <td>Room Twin 01</td>
+    <td>15-03-2021</td>
+    <td>17-03-2021</td>
+    <td>50000</td>
+    <td>
+      <button type="button" class="btn btn-warning">Edit</button>
+      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">4</th>
+    <td>Hoàng Trần Nhi Nhi</td>
+    <td>Nguyễn Bỉnh Phát</td>
+    <td>Villa Beach Front</td>
+    <td>14-01-2021</td>
+    <td>18-01-2021</td>
+    <td>100000</td>
+    <td>
+      <button type="button" class="btn btn-warning">Edit</button>
+      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">5</th>
+    <td>Trần Đại Danh</td>
+    <td>Khúc Nguyễn An Nghi</td>
+    <td>House Princess 01</td>
+    <td>22-06-2022</td>
+    <td>25-06-2022</td>
+    <td>1500000</td>
+    <td>
+      <button type="button" class="btn btn-warning">Edit</button>
+      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
 
 <footer style = "margin-top: 50px">
   <div style = "background: lightseagreen; height: 400px; width: 100%">
