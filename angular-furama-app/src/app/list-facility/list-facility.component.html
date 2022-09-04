@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead>
+  <th>Srvice Id</th>
+  <th>Service Name</th>
+  <th>Area</th>
+  <th>Rental Costs</th>
+  <th>Max People</th>
+  <th>Room Standard</th>
+  <th>Pool Area</th>
+  <th>Floor</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let Facility of Facilities; index as i">
+    <td>{{Facility.serviceId}}</td>
+    <td>{{Facility.serviceName}}</td>
+    <td> {{Facility.area}}</td>
+    <td>{{Facility.rentalCosts}}</td>
+    <td>{{Facility.maxPeople}}</td>
+    <td>{{Facility.roomStandard}}</td>
+    <td>{{Facility.poolArea}}</td>
+    <td>{{Facility.floor}}</td>
+    <td>
+      <button>Edit</button>
+      <button>Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
