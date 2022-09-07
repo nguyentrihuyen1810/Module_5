@@ -8,17 +8,20 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
 import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ListCustomerComponent,
-    UpdateCustomerComponent,
-    DeleteCustomerComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ListCustomerComponent,
+        UpdateCustomerComponent,
+        DeleteCustomerComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
+    providers: [],
+    exports: [
+        ListCustomerComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
