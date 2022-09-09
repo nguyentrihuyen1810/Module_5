@@ -1,1 +1,25 @@
-<p>product-eidt works!</p>
+<p>Update product</p>
+<form [formGroup] = "productForm" (ngSubmit) = "updateProduct(id)">
+  <table style = "border: 1px">
+    <tr>
+      <td>Ma san pham</td>
+      <td><input type = "number" formControlName = "id"></td>
+    </tr>
+    <tr>
+      <td>Ten san pham</td>
+      <td><input type = "number" formControlName = "name"></td>
+    </tr>
+    <tr>
+      <td>Gia san pham</td>
+      <td><input type = "number" formControlName = "price"></td>
+    </tr>
+    <tr>
+      <td>Mo ta ve san pham</td>
+      <td><input type = "number" formControlName = "description"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Cap nhat</button></td>
+    </tr>
+  </table>
+</form>
