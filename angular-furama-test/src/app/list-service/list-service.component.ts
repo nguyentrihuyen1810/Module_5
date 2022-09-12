@@ -12,22 +12,22 @@ export interface Facility {
 }
 
 @Component({
-  selector: 'app-list-facility',
-  templateUrl: './list-facility.component.html',
-  styleUrls: ['./list-facility.component.css']
+  selector: 'app-list-service',
+  templateUrl: './list-service.component.html',
+  styleUrls: ['./list-service.component.css']
 })
-export class ListFacilityComponent implements OnInit {
+export class ListServiceComponent implements OnInit {
   facility: Facility [] = [
     {
-    serviceId: 1,
-    serviceName: 'Diamond Hotel (Room)',
-    area: 30,
-    rentalCosts: 2000000,
-    maxPeople: 2,
-    roomStandard: 'Vip',
-    poolArea: 0,
-    floor: 0,
-  },
+      serviceId: 1,
+      serviceName: 'Diamond Hotel (Room)',
+      area: 30,
+      rentalCosts: 2000000,
+      maxPeople: 2,
+      roomStandard: 'Vip',
+      poolArea: 0,
+      floor: 0,
+    },
     {
       serviceId: 2,
       serviceName: 'House',

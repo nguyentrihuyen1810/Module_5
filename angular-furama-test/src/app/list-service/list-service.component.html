@@ -1,0 +1,42 @@
+<h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px; color: lightseagreen">LIST SERVICE</h1><br>
+
+<div style = "height: 80px; width: 100%">
+  <nav class="navbar navbar-light bg-light" style = "width: 30%; float: left; margin-left: 20px">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  <button style = "float: left; margin-left: 800px; margin-top: 20px" type="button" class="btn btn-success" [routerLink]="['add-service']">+ Thêm mới hợp đồng</button>
+</div>
+
+<table class="table table-striped">
+  <thead style="text-align: center">
+  <th>Service Id</th>
+  <th>Service Name</th>
+  <th>Area</th>
+  <th>Rental Costs</th>
+  <th>Max People</th>
+  <th>Room Standard</th>
+  <th>Pool Area</th>
+  <th>Floor</th>
+  <th>Action</th>
+  </thead>
+  <tbody style="text-align: center">
+  <tr *ngFor="let Facility of facility; index as i" >
+    <td>{{Facility.serviceId}}</td>
+    <td>{{Facility.serviceName}}</td>
+    <td> {{Facility.area}}</td>
+    <td>{{Facility.rentalCosts}}</td>
+    <td>{{Facility.maxPeople}}</td>
+    <td>{{Facility.roomStandard}}</td>
+    <td>{{Facility.poolArea}}</td>
+    <td>{{Facility.floor}}</td>
+    <td>
+    <td>
+      <button type="button" class="btn btn-warning">Edit</button>
+      <button type="button" class="btn btn-danger" style = "margin-left: 20px">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

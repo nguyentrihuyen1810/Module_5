@@ -45,7 +45,13 @@ import { CustomerComponent } from './customer/customer.component';
     ],
     providers: [],
     exports: [
-        ListCustomerComponent
+        ListCustomerComponent,
+        ListFacilityComponent,
+        ListServiceComponent,
+        ListContractComponent,
+        FuramaComponent,
+        AddContractComponent,
+        HeaderComponent
     ],
     bootstrap: [AppComponent]
 })

@@ -1,0 +1,42 @@
+<h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px; color: lightseagreen">LIST CUSTOMER</h1><br>
+
+<div style = "height: 80px; width: 100%">
+  <nav class="navbar navbar-light bg-light" style = "width: 30%; float: left; margin-left: 20px">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  <button style = "float: left; margin-left: 800px; margin-top: 20px" type="button" class="btn btn-success" [routerLink]="['/add-customer']">+ Thêm mới hợp đồng</button>
+</div>
+
+<table class="table table-striped">
+  <thead style="text-align: center">
+  <th>CustomerType</th>
+  <th>Customer Name</th>
+  <th>Birthday</th>
+  <th>Gender</th>
+  <th>ID Card</th>
+  <th>Phone</th>
+  <th>Email</th>
+  <th>Address</th>
+  <th>Action</th>
+  </thead>
+  <tbody style="text-align: center">
+  <tr *ngFor="let Customer of customer; index as i">
+    <td>{{Customer.customerType}}</td>
+    <td>{{Customer.name}}</td>
+    <td> {{Customer.birthday}}</td>
+    <td>{{Customer.gender}}</td>
+    <td>{{Customer.idCard}}</td>
+    <td>{{Customer.phone}}</td>
+    <td>{{Customer.email}}</td>
+    <td>{{Customer.address}}</td>
+    <td>
+    <td>
+      <button type="button" class="btn btn-warning">Edit</button>
+      <button type="button" class="btn btn-danger" style = "margin-left: 20px">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
