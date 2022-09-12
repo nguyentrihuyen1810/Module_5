@@ -21,29 +21,32 @@ import { ListFacilityComponent } from './list-facility/list-facility.component';
 import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    NatigationComponent,
-    EditServiceComponent,
-    EditServiceComponent,
-    AddServiceComponent,
-    ListCustomerComponent,
-    FuramaComponent,
-    ListServiceComponent,
-    EditCustomerComponent,
-    AddCustomerComponent,
-    AddContractComponent,
-    ListContractComponent,
-    ListFacilityComponent,
-    CustomerComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        NatigationComponent,
+        EditServiceComponent,
+        EditServiceComponent,
+        AddServiceComponent,
+        ListCustomerComponent,
+        FuramaComponent,
+        ListServiceComponent,
+        EditCustomerComponent,
+        AddCustomerComponent,
+        AddContractComponent,
+        ListContractComponent,
+        ListFacilityComponent,
+        CustomerComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule
+    ],
+    providers: [],
+    exports: [
+        ListCustomerComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

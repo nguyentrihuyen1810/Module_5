@@ -1,0 +1,33 @@
+<table border = "1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date of birth</th>
+    <th>Gender</th>
+    <th>ID Card</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Customer Type</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customerList">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.dateOfBirth}}</td>
+    <td>{{customer.gender}}</td>
+    <td>{{customer.idCard}}</td>
+    <td>{{customer.phone}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.customerType.name}}</td>
+    <td>
+      <button>Edit</button>
+      <button>Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

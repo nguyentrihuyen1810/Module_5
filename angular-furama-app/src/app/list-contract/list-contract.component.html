@@ -89,69 +89,16 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">1</th>
-    <td>Nguyễn Thị Hào</td>
-    <td>Hồ Thị Yến</td>
-    <td>Room Twin 01</td>
-    <td>08-12-2020</td>
-    <td>08-12-2020</td>
-    <td>0</td>
+  <tr *ngFor="let Contract of Contracts; index as i">
+    <td>{{Contract.customerName}}</td>
+    <td>{{Contract.employeeName}}</td>
+    <td>{{Contract.service}}</td>
+    <td>{{Contract.startDate}}</td>
+    <td>{{Contract.endDate}}</td>
+    <td>{{Contract.deposit}}</td>
     <td>
-      <button type="button" class="btn btn-warning">Edit</button>
-      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">1</th>
-    <td>Phạm Xuân Diệu</td>
-    <td>Võ Công Toản</td>
-    <td>Room Twin 02</td>
-    <td>25-02-2021</td>
-    <td>01-03-2021</td>
-    <td>0</td>
-    <td>
-      <button type="button" class="btn btn-warning">Edit</button>
-      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Dương Văn Quan</td>
-    <td>Lê Văn Bình</td>
-    <td>Room Twin 01</td>
-    <td>15-03-2021</td>
-    <td>17-03-2021</td>
-    <td>50000</td>
-    <td>
-      <button type="button" class="btn btn-warning">Edit</button>
-      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">4</th>
-    <td>Hoàng Trần Nhi Nhi</td>
-    <td>Nguyễn Bỉnh Phát</td>
-    <td>Villa Beach Front</td>
-    <td>14-01-2021</td>
-    <td>18-01-2021</td>
-    <td>100000</td>
-    <td>
-      <button type="button" class="btn btn-warning">Edit</button>
-      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">5</th>
-    <td>Trần Đại Danh</td>
-    <td>Khúc Nguyễn An Nghi</td>
-    <td>House Princess 01</td>
-    <td>22-06-2022</td>
-    <td>25-06-2022</td>
-    <td>1500000</td>
-    <td>
-      <button type="button" class="btn btn-warning">Edit</button>
-      <button style = "margin-left: 15px" type="button" class="btn btn-danger">Delete</button>
+      <button>Edit</button>
+      <button>Delete</button>
     </td>
   </tr>
   </tbody>
