@@ -1,0 +1,15 @@
+<h1>Sửa</h1>
+<form [formGroup]="todoForm" *ngIf="todoForm" (ngSubmit)="submit(todo.id)">
+  <table>
+    <tr>
+      <td>Content</td>
+      <td><input type="text" formControlName="content"></td>
+    </tr>
+    <tr>
+      <td>
+        <button type="submit">Sửa</button>
+        <button routerLink="">Quay lại</button>
+      </td>
+    </tr>
+  </table>
+</form >
