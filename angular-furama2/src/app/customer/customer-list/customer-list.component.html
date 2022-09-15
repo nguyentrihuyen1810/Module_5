@@ -1,0 +1,39 @@
+<h1 style = "text-align: center; color: lightseagreen; margin-top: 20px">Customer List</h1>
+<a routerLink="/create" class="btn btn-success" type="button">+ Add new customer</a>
+<div class="form-inline" style = "margin-top: 20px">
+  <input class="form-control mr-sm-2" type="search" [(ngModel)]="nameSearch">
+  <button class="btn btn-outline-secondary" type="submit" (click)="searchByName()">Search</button>
+</div>
+<table class="table table-hover" style="margin-top: 20px">
+  <thead style = "background: lightseagreen">
+  <tr>
+    <th scope="col">Customer ID</th>
+    <th scope="col">Customer Name</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Email</th>
+    <th scope="col">Address</th>
+    <th scope="col">Customer Type</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td scope="row">{{customer.id}}</td>
+    <td scope="row">{{customer.name | titlecase}}</td>
+    <td scope="row">{{customer.birthday}}</td>
+    <td scope="row">{{customer.gender}}</td>
+    <td scope="row">{{customer.phone}}</td>
+    <td scope="row">{{customer.email}}</td>
+    <td scope="row">{{customer.address}}</td>
+    <td scope="row">{{customer.customerType.name}}</td>
+    <td>
+      <a (click)="openDialogDelete(customer.id)" type="button" class="btn btn-danger">
+        Delete
+      </a>
+      <a style = "margin-left: 10px" type="button" class="btn btn-warning" routerLink="/edit/{{customer.id}}">Edit</a>
+    </td>
+  </tr>
+  <tbody>
+</table>

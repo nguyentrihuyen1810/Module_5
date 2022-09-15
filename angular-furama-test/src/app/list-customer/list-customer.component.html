@@ -3,8 +3,8 @@
 <div style = "height: 80px; width: 100%">
   <nav class="navbar navbar-light bg-light" style = "width: 30%; float: left; margin-left: 20px">
     <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" [(ngModel)]="customerNameSearch" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchByName()">Search</button>
     </form>
   </nav>
   <button style = "float: left; margin-left: 800px; margin-top: 20px" type="button" class="btn btn-success" [routerLink]="['/add-customer']">+ Thêm mới hợp đồng</button>
@@ -12,7 +12,8 @@
 
 <table class="table table-striped">
   <thead style="text-align: center">
-  <th>CustomerType</th>
+  <th>Id</th>
+  <th>Customer Type</th>
   <th>Customer Name</th>
   <th>Birthday</th>
   <th>Gender</th>
@@ -23,9 +24,10 @@
   <th>Action</th>
   </thead>
   <tbody style="text-align: center">
-  <tr *ngFor="let Customer of customer; index as i">
-    <td>{{Customer.customerType}}</td>
-    <td>{{Customer.name}}</td>
+  <tr *ngFor="let Customer of customers; index as i">
+    <td>{{Customer.customerId}}</td>
+    <td>{{Customer.customerType.name}}</td>
+    <td>{{Customer.customerName}}</td>
     <td> {{Customer.birthday}}</td>
     <td>{{Customer.gender}}</td>
     <td>{{Customer.idCard}}</td>
@@ -35,7 +37,9 @@
     <td>
     <td>
       <button type="button" class="btn btn-warning">Edit</button>
-      <button type="button" class="btn btn-danger" style = "margin-left: 20px">Delete</button>
+    <a (click)="openDialogDelete(Customer.id)" style="background-color: #6f42c1; color: azure" scope="row" type="button" class="btn m-lg-1">
+      Delete
+    </a>
     </td>
   </tr>
   </tbody>

@@ -1,0 +1,244 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "name": "Nguyễn Thị Hào",
+      "birthday": "07/11/1995",
+      "gender": "Nữ",
+      "idCard": "643431213",
+      "phone": "0945423362",
+      "email": "thihao07@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Nguyễn Thị Hào",
+      "birthday": "08/08/1992",
+      "gender": "Nam",
+      "idCard": "865342123",
+      "phone": "0954333333",
+      "email": "xuandieu92@gmail.com",
+      "address": "Quảng Trị"
+    },
+    {
+      "id": 3,
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Trương Đình Nghệ",
+      "birthday": "07/08/1990",
+      "gender": "Nam",
+      "idCard": "488645199",
+      "phone": "0373213122",
+      "email": "nghenhan2702@gmail.com",
+      "address": "Vinh"
+    },
+    {
+      "id": 4,
+      "name": "Dương Văn Quang",
+      "birthday": "08/07/1981",
+      "gender": "Nam",
+      "phone": "123456789",
+      "email": "quan@gmail.com",
+      "address": "Gia Lai",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "name": "Nguyễn Thị Hào",
+      "start": "12/08/2020",
+      "end": "12/08/2020",
+      "deposits": 0,
+      "service": {
+        "id": 3,
+        "name": "Room Twin 01"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Trương Đình Nghệ",
+      "start": "14/07/2020",
+      "end": "21/07/2020",
+      "deposits": 2000000,
+      "service": {
+        "id": 1,
+        "name": "Villa Beach Front"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dương Văn Quan",
+      "start": "15/03/2021",
+      "end": "17/03/2021",
+      "deposits": 500000,
+      "service": {
+        "id": 2,
+        "name": "House Princess 01"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Hoàng Trần Nhi Nhi",
+      "start": "14/01/2021",
+      "end": "18/01/2021",
+      "deposits": 1000000,
+      "service": {
+        "id": 5,
+        "name": "House Princess 02"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Phạm Xuân Diệu",
+      "start": "14/07/2021",
+      "end": "15/07/2021",
+      "deposits": 0,
+      "service": {
+        "id": 6,
+        "name": "Room Twin 02"
+      }
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "name": "Villa Beach Front"
+    },
+    {
+      "id": 2,
+      "name": "House Princess 01"
+    },
+    {
+      "id": 3,
+      "name": "Room Twin 01"
+    },
+    {
+      "id": 4,
+      "name": "Villa No Beach Front"
+    },
+    {
+      "id": 5,
+      "name": "House Princess 02"
+    },
+    {
+      "id": 6,
+      "name": "Room Twin 02"
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn An",
+      "birthday": "07/11/1980",
+      "phone": "0901234121",
+      "email": "annguyen@gmail.com",
+      "address": "Đà Nẵng",
+      "position": {
+        "id": 1,
+        "name": "Sale-Marketing"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Lê Văn Bình",
+      "birthday": "09/04/1997",
+      "phone": "0934212314",
+      "email": "binhlv@gmail.com",
+      "address": "Đà Nẵng",
+      "position": {
+        "id": 1,
+        "name": "Sale-Marketing"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Hồ Thị Yến",
+      "birthday": "12/12/1995",
+      "phone": "0412352315",
+      "email": "thiyen@gmail.com",
+      "address": "Gia Lai",
+      "position": {
+        "id": 1,
+        "name": "Sale-Marketing"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Khúc Nguyễn An Nghi",
+      "birthday": "08/11/2000",
+      "phone": "0978653213",
+      "email": "annghi20@gmail.com",
+      "address": "Đà Nẵng",
+      "position": {
+        "id": 2,
+        "name": "Hành chính"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Nguyễn Hà Đông",
+      "birthday": "09/03/1989",
+      "phone": "0642123111",
+      "email": "donghanguyen@gmail.com",
+      "address": "Hà Nội",
+      "position": {
+        "id": 3,
+        "name": "Phục vụ"
+      }
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Sale-Marketing"
+    },
+    {
+      "id": 2,
+      "name": "Hành chính"
+    },
+    {
+      "id": 3,
+      "name": "Phục vụ"
+    },
+    {
+      "id": 4,
+      "name": "Quản lý"
+    }
+  ]
+}

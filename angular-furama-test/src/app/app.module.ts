@@ -13,6 +13,14 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { ListRoomTypeComponent } from './list-room-type/list-room-type.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteCustomerComponent } from './delete-customer/delete-customer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -26,11 +34,19 @@ import { HeaderComponent } from './header/header.component';
     AddCustomerComponent,
     ListRoomTypeComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    DeleteCustomerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

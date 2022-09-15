@@ -1,0 +1,73 @@
+<h1 style = "text-align: center; color: lightseagreen; margin-top: 20px">Update Customer</h1>
+<br>
+<div class="container-fluid">
+  <div class="col-6">
+    <form [formGroup]="customerForm" (ngSubmit)="update()">
+
+      <div class="form-group">
+        <label>Customer Name:</label>
+        <input class="form-control" name="name" formControlName="name">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.dirty">
+        Name is invalid.
+      </div>
+
+      <div class="form-group">
+        <label>Birthday:</label>
+        <input class="form-control" name="birthday" formControlName="birthday">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="customerForm.get('birthday')?.invalid && customerForm.get('birthday')?.dirty">
+        Birthday is invalid.
+      </div>
+
+
+      <div class="form-group">
+        <label>Gender:</label>
+        <input class="form-control" formControlName="gender">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="customerForm.get('gender')?.invalid && customerForm.get('gender')?.dirty">
+        Gender is invalid.
+      </div>
+
+      <div class="form-group">
+        <label>Phone:</label>
+        <input class="form-control" formControlName="phone">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="customerForm.get('phone')?.invalid && customerForm.get('phone')?.dirty">
+        Phone is invalid.
+      </div>
+
+      <div class="form-group">
+        <label>Email:</label>
+        <input class="form-control" formControlName="email">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.dirty">
+        Email is invalid.
+      </div>
+
+      <div class="form-group">
+        <label>Address:</label>
+        <input class="form-control" formControlName="address">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="customerForm.get('address')?.invalid && customerForm.get('address')?.dirty">
+        Address is invalid.
+      </div>
+
+      <div class="form-group">
+        <label>Customer Type</label>
+        <select class="form-control" id="category" formControlName="customerType">
+          <option *ngFor ="let ctmt of customerType" [ngValue] = "ctmt">{{ctmt.name}}</option>
+        </select>
+      </div>
+
+      <button class="btn btn-success" type = "submit">Edit</button>
+      <button class="btn btn-warning" type = "reset" style = "margin-left: 20px">Reset</button>
+    </form>
+  </div>
+</div>

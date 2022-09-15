@@ -1,9 +1,15 @@
 <h1 style="text-align: center; margin-top: 20px; color: lightseagreen">Add contract</h1><br>
-<form style = "width: 100%; height: 250px; float: left">
+<form style = "width: 100%; height: 250px; float: left" >
   <div style = "float: left; height: 300px; width: 45%; margin-top: 20px">
     <div class="input-group mb-3" style="width: 80%; margin-left: 110px">
-      <span class="input-group-text" id="basic-addon1">Contract Id</span>
+      <span class="input-group-text" id="basic-addon1" formControlName = "contractId">Contract Id</span>
       <input type="text" class="form-control" aria-label="Contract Id" aria-describedby="basic-addon1">
+      <div *ngIf="formContractAdd.get('contractId')?.invalid && (formContractAdd.get('contractId')?.touched||formContractAdd.get('contractId')?.dirty)">
+        <div [hidden]="!formContractAdd.get('contractId').errors.required">
+          <small class="form-text" style="color: red; font-style: italic" >
+            Bạn chưa nhập id.</small>
+        </div>
+      </div>
     </div>
     <div class="input-group mb-3" style="width: 80%; margin-left: 110px">
       <input type="text" class="form-control" aria-describedby="basic-addon2">

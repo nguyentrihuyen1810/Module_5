@@ -1,0 +1,55 @@
+<p class="align-content-center"><h2>Edit</h2>
+<br>
+<div class="container-fluid">
+  <div class="col-6">
+    <form [formGroup]="contractForm" (ngSubmit)="update()">
+
+      <div class="form-group">
+        <label>Customer Name:</label>
+        <input class="form-control" name="name" formControlName="name">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="contractForm.get('name')?.invalid && contractForm.get('name')?.dirty">
+        Name is invalid.
+      </div>
+
+
+      <div class="form-group">
+        <label>Start Date:</label>
+        <input type = "date" class="form-control" formControlName="start">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="contractForm.get('start')?.invalid && contractForm.get('start')?.dirty">
+        Start Date is invalid.
+      </div>
+
+      <div class="form-group">
+        <label>End Date:</label>
+        <input class="form-control" formControlName="end">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="contractForm.get('end')?.invalid && contractForm.get('end')?.dirty">
+        Input quantity.
+      </div>
+
+      <div class="form-group">
+        <label>Desposit:</label>
+        <input class="form-control" formControlName="desposit">
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="contractForm.get('desposit')?.invalid && contractForm.get('desposit')?.dirty">
+        Desposit is invalid.
+      </div>
+
+      <div class="form-group">
+        <label>Service</label>
+        <select class="form-control" id="service" formControlName="service">
+          <option *ngFor ="let sev of service" [ngValue] = "sev">{{sev.name}}</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary">Save</button>
+
+    </form>
+  </div>
+</div>

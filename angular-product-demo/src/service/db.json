@@ -1,0 +1,66 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone X",
+      "price": 300000,
+      "status": "100%",
+      "quantity": "10",
+      "category": {
+        "id": 3,
+        "name": "Television"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy X7",
+      "price": 300000,
+      "status": "90%",
+      "quantity": "10",
+      "category": {
+        "id": 1,
+        "name": "Phone"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Toshiba 5.0.0",
+      "price": "25000",
+      "status": "99%",
+      "quantity": "500",
+      "category": {
+        "id": 2,
+        "name": "Fridge"
+      }
+    },
+    {
+      "id": 4,
+      "name": "LG Lnx",
+      "price": "40000",
+      "status": "old",
+      "quantity": "30",
+      "category": {
+        "id": 3,
+        "name": "Television"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Phone"
+    },
+    {
+      "id": 2,
+      "name": "Fridge"
+    },
+    {
+      "id": 3,
+      "name": "Television"
+    },
+    {
+      "id": 4,
+      "name": "Washing"
+    }
+  ]
+}
