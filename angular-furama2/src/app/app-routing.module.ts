@@ -11,6 +11,9 @@ import {ContractEditComponent} from './contract/contract-edit/contract-edit.comp
 import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
 import {EmployeeCreateComponent} from './employee/employee-create/employee-create.component';
 import {EmployeeEditComponent} from './employee/employee-edit/employee-edit.component';
+import {RoomTypeCreateComponent} from './roomType/room-type-create/room-type-create.component';
+import {RoomTypeEditComponent} from './roomType/room-type-edit/room-type-edit.component';
+import {componentFactoryName} from '@angular/compiler';
 
 
 const routes: Routes = [
@@ -24,7 +27,9 @@ const routes: Routes = [
   {path: 'contract-list/create', component: ContractCreateComponent},
   {path: 'contract-list/edit/:id', component: ContractEditComponent},
   {path: 'employee-list/create', component: EmployeeCreateComponent},
-  {path: 'employee-list/edit/:id', component: EmployeeEditComponent}
+  {path: 'employee-list/edit/:id', component: EmployeeEditComponent},
+  {path: 'room-type-list/create', component: RoomTypeCreateComponent},
+  {path: 'room-tpe-list/edit/:id', component: RoomTypeEditComponent}
 ];
 
 @NgModule({

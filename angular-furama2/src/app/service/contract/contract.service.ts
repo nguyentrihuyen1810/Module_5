@@ -33,6 +33,6 @@ export class ContractService {
   }
 
   findByName(nameSearch: string) {
-    return this.http.get(this.API_URL + '?customerName_like=' + nameSearch );
+    return this.http.get(this.API_URL + '?name_like=' + nameSearch );
   }
 }

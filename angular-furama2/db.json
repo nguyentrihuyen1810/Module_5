@@ -240,5 +240,99 @@
       "id": 4,
       "name": "Quản lý"
     }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "name": "Villa Beach Front",
+      "area": "25000",
+      "max": 10,
+      "standard": "Vip",
+      "description": "Có hồ bơi",
+      "floor": 4,
+      "serviceType": {
+        "id": 1,
+        "name": ""
+      }
+    },
+    {
+      "id": 2,
+      "name": "House Princess 01",
+      "area": "14000",
+      "max": 7,
+      "standard": "Vip",
+      "description": "Có thêm bếp nướng",
+      "floor": 3,
+      "serviceType": {
+        "id": 2,
+        "name": ""
+      }
+    },
+    {
+      "id": 3,
+      "name": "Room Twin 01",
+      "area": "5000",
+      "max": 2,
+      "standard": "Normal",
+      "description": "Có tivi",
+      "floor": 0,
+      "serviceType": {
+        "id": 3,
+        "name": ""
+      }
+    },
+    {
+      "id": 4,
+      "name": "Villa No Beach Front",
+      "area": "22000",
+      "max": 8,
+      "standard": "Normal",
+      "description": "Có hồ bơi",
+      "floor": 3,
+      "serviceType": {
+        "id": 1,
+        "name": ""
+      }
+    },
+    {
+      "id": 5,
+      "name": "House Princess 02",
+      "area": "10000",
+      "max": 5,
+      "standard": "Normal",
+      "description": "Có thêm bếp nướng",
+      "floor": 2,
+      "serviceType": {
+        "id": 2,
+        "name": ""
+      }
+    },
+    {
+      "id": 6,
+      "name": "Room Twin 02",
+      "area": "3000",
+      "max": 2,
+      "standard": "Normal",
+      "description": "Có tivi",
+      "floor": 0,
+      "serviceType": {
+        "id": 3,
+        "name": ""
+      }
+    }
+  ],
+  "serviceType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
   ]
 }
