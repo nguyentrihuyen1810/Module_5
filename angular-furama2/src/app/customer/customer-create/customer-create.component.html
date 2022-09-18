@@ -9,8 +9,12 @@
         <input class="form-control" name="name" formControlName="name">
       </div>
       <div class="alert alert-danger" role="alert" style = "color: red"
-           *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.dirty">
+           *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched">
         Name is invalid.
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red"
+           *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched">
+
       </div>
 
 
@@ -28,7 +32,7 @@
         <input class="form-control" formControlName="gender">
       </div>
       <div class="alert alert-danger" role="alert" style = "color: red"
-           *ngIf="customerForm.get('gender')?.invalid && customerForm.get('gender')?.dirty">
+           *ngIf="!customerForm.get('gender')?.invalid && customerForm.get('gender')?.dirty">
         Input quantity.
       </div>
 
@@ -45,9 +49,15 @@
         <label>Email:</label>
         <input class="form-control" formControlName="email">
       </div>
-      <div class="alert alert-danger" role="alert" style = "color: red"
-           *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.dirty">
-        Phone is invalid.
+      <div class="alert alert-danger" role="alert" style = "color: red" *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.dirty">
+        <div [hidden]="!customerForm.get('email').errors.required">
+          Email is invalid.
+        </div>
+      </div>
+      <div class="alert alert-danger" role="alert" style = "color: red" *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.dirty">
+        <div [hidden]="!customerForm.get('email').errors.pattern">
+          Chua dung dinh dang
+        </div>
       </div>
 
       <div class="form-group">
@@ -72,3 +82,20 @@
     </form>
   </div>
 </div>
+
+
+
+<!--<div *ngIf="customerCreateForm.get('code')?.invalid && (customerCreateForm.get('code')?.touched||customerCreateForm.get('code')?.dirty)">-->
+<!--  <div [hidden]="!customerCreateForm.get('code').errors.required">-->
+<!--    <small class="form-text" style="color: red; font-style: italic" >-->
+<!--      Bạn chưa nhập mã khách.</small>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div *ngIf="customerCreateForm.get('code')?.invalid && (customerCreateForm.get('code')?.touched||customerCreateForm.get('code')?.dirty)">-->
+<!--  <div [hidden]="!customerCreateForm.get('code').errors.pattern">-->
+<!--    <small class="form-text" style="color: red; font-style: italic" >-->
+<!--      Nhập mã khách theo định dạng KHXXXX.</small>-->
+<!--  </div>-->
+<!--</div>-->
+
+

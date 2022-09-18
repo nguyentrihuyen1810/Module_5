@@ -2,7 +2,8 @@
 <a routerLink="/employee-list/create" class="btn btn-info m-3" type="button">+ Add new employee</a>
 <div class="form-inline">
   <input class="form-control mr-sm-2" type="search" [(ngModel)]="nameSearch">
-<!--  <button class="btn btn-outline-secondary" type="submit" (click)="searchByName()">Search</button>-->
+  <input class="form-control mr-sm-2" type="search" [(ngModel)]="addressSearch">
+  <button class="btn btn-outline-secondary" type="submit" (click)="searchByName()">Search</button>
 </div>
 <table class="table table-hover" style="margin-top: 20px">
   <thead style = "background: lightseagreen">

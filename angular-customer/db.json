@@ -1,0 +1,96 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "name": "Nguyễn Thị Hào",
+      "birthday": "07/11/1995",
+      "gender": "Nữ",
+      "idCard": "643431213",
+      "phone": "0945423362",
+      "email": "thihao07@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Nguyễn Thị Hào",
+      "birthday": "08/08/1992",
+      "gender": "Nam",
+      "idCard": "865342123",
+      "phone": "0954333333",
+      "email": "xuandieu92@gmail.com",
+      "address": "Quảng Trị"
+    },
+    {
+      "id": 3,
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "Trương Đình Nghệ",
+      "birthday": "07/08/1990",
+      "gender": "Nam",
+      "idCard": "488645199",
+      "phone": "0373213122",
+      "email": "nghenhan2702@gmail.com",
+      "address": "Vinh"
+    },
+    {
+      "id": 4,
+      "name": "Dương Văn Quang",
+      "birthday": "08/07/1981",
+      "gender": "Nam",
+      "idCard": "4561289730",
+      "phone": "123456789",
+      "email": "quan@gmail.com",
+      "address": "Gia Lai",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 5,
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "name": "Huyen Nguyen",
+      "birthday": "18/10/2002",
+      "gender": "Nu",
+      "idCard": "4561237890",
+      "phone": "0935169714",
+      "email": "trihuyen1810@gmail.com",
+      "address": "106/1 Le Dinh Ly"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

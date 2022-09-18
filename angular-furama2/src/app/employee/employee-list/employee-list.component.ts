@@ -17,6 +17,7 @@ export class EmployeeListComponent implements OnInit {
   p = 1;
   employees: any = [];
   nameSearch: string;
+  addressSearch: string;
 
   constructor(private employeeService: EmployeeService,
               private positionService: PositionService,
@@ -40,6 +41,13 @@ export class EmployeeListComponent implements OnInit {
           this.ngOnInit();
         });
       });
+  }
+
+  searchByName() {
+    this.employeeService.findByName(this.nameSearch, this.addressSearch).subscribe((data) => {
+      this.employees = data;
+      this.p = 1;
+    });
   }
 
 }

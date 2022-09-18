@@ -1,0 +1,90 @@
+<h2>Create Customer</h2>
+<div>
+  <form [formGroup]="customerAddForm" (ngSubmit)="add()">
+    <div>
+      <label>Customer Name:</label>
+      <input type = "text" formControlName = "name">
+      <div *ngIf="customerAddForm.get('name')?.invalid && (customerAddForm.get('name')?.touched || customerAddForm.get('name')?.dirty)">
+        <div [hidden]="!customerAddForm.get('name').errors.required">
+          <small>Customer name khong duoc de trong</small>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label>Customer Type: </label>
+      <select id="customerType" formControlName="customerType">
+        <option *ngFor ="let ctmt of customerType" [ngValue] = "ctmt">{{ctmt.name}}</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Birthday:</label>
+      <input type = "text" formControlName = "birthday">
+      <div *ngIf="customerAddForm.get('birthday')?.invalid && (customerAddForm.get('birthday')?.touched || customerAddForm.get('birthday')?.dirty)">
+        <div [hidden]="!customerAddForm.get('birthday').errors.required">
+          <small>Birthday khong duoc de trong</small>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label>Gender:</label>
+      <div *ngFor = "let gender of genders">
+        <label><input type="radio" formControlName = "gender" [value]="gender">{{gender}}</label>
+      </div>
+    </div>
+
+    <div>
+      <label>ID Card:</label>
+      <input type = "text" formControlName = "idCard">
+      <div *ngIf="customerAddForm.get('idCard')?.invalid && (customerAddForm.get('idCard')?.touched || customerAddForm.get('idCard')?.dirty)">
+        <div [hidden]="!customerAddForm.get('idCard').errors.required">
+          <small>ID Card khong duoc de trong</small>
+        </div>
+      </div>
+      <div *ngIf="customerAddForm.get('idCard')?.invalid && (customerAddForm.get('idCard')?.touched || customerAddForm.get('idCard')?.dirty)">
+        <div [hidden]="!customerAddForm.get('idCard').errors.pattern">
+          <small>ID Card chua dung dinh dang. ID Card toi thieu 10 so</small>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label>Phone:</label>
+      <input type = "text" formControlName = "phone">
+      <div *ngIf="customerAddForm.get('phone')?.invalid && (customerAddForm.get('phone')?.touched || customerAddForm.get('phone')?.dirty)">
+        <div [hidden]="!customerAddForm.get('phone').errors.required">
+          <small>Phone khong duoc de trong</small>
+        </div>
+      </div>
+      <div *ngIf="customerAddForm.get('phone')?.invalid && (customerAddForm.get('phone')?.touched || customerAddForm.get('phone')?.dirty)">
+        <div [hidden]="!customerAddForm.get('phone').errors.pattern">
+          <small>Phone phai dung dinh dang 09XXXXXXXX</small>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type = "text" formControlName = "email">
+      <div *ngIf="customerAddForm.get('email')?.invalid && (customerAddForm.get('email')?.touched || customerAddForm.get('email')?.dirty)">
+        <div [hidden]="!customerAddForm.get('email').errors.required">
+          <small>Email khong duoc de trong</small>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label>Address:</label>
+      <input type = "text" formControlName = "address">
+      <div *ngIf="customerAddForm.get('address')?.invalid && (customerAddForm.get('address')?.touched || customerAddForm.get('address')?.dirty)">
+        <div [hidden]="!customerAddForm.get('address').errors.required">
+          <small>Address khong duoc de trong</small>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-success" type = "submit">Create</button>
+    <button class="btn btn-warning" type= "reset">Reset</button>
+  </form>
+</div>

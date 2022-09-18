@@ -19,7 +19,7 @@ export class CustomerCreateComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
     birthday: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required, Validators.pattern('^(84|0)9([0|1])[0-9]{7}$')]),
     email: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required]),
     customerType: new FormControl('', [Validators.required]),
@@ -58,8 +58,19 @@ export class CustomerCreateComponent implements OnInit {
   getCategory() {
     this.customerTypeService.getAllType().subscribe((res) => {
         this.customerType = res;
-      }
-    );
+      });
   }
 
 }
+
+
+
+// code: new FormControl('', [Validators.required, Validators.pattern('^KH[0-9]{4}$')]),
+//   type: new FormControl('', [Validators.required]),
+//   name: new FormControl('', [Validators.required]),
+//   birthday: new FormControl('', [Validators.required]),
+//   gender: new FormControl('', [Validators.required]),
+//   idCard: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10,12}$')]),
+//   phone: new FormControl('', [Validators.required, Validators.pattern('^(84|0)9([0|1])[0-9]{7}$')]),
+//   email: new FormControl('', [Validators.required, Validators.pattern('(\\W|^)[\\w.+\\-]*@gmail\\.com(\\W|$)')]),
+//   address: new FormControl('', [Validators.required])

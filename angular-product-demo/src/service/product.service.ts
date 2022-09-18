@@ -7,7 +7,7 @@ import {Product} from '../data/Product';
   providedIn: 'root'
 })
 export class ProductService {
-  API_URL = 'http://localhost:3000/products';
+  API_URL = 'http://localhost:3000/product';
 
   constructor(private http: HttpClient) { }
 
@@ -28,10 +28,7 @@ export class ProductService {
   }
 
   update(id: number, product: Product) {
-    return this.http.put(`${this.API_URL}/${id}`, product);;
+    return this.http.put(`${this.API_URL}/${id}`, product);
   }
 
-  findByName(nameSearch: string) {
-    return this.http.get(this.API_URL + '?name_like=' + nameSearch )
-  }
 }

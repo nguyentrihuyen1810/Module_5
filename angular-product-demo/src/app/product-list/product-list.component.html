@@ -4,31 +4,36 @@
   <input class="form-control mr-sm-2" type="search" [(ngModel)]="nameSearch">
   <button class="btn btn-outline-secondary" type="submit" (click)="searchByName()">Search</button>
 </div>
-<table class="table">
-  <thead class="table table-striped table-hover table-bordered">
+<table class="table table-hover" style="margin-top: 20px">
+  <thead style = "background: lightseagreen">
   <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Name</th>
-    <th scope="col">Price</th>
-    <th scope="col">Status</th>
-    <th scope="col">Quantity</th>
-    <th scope="col">Category</th>
+    <th scope="col">Ma lo hang</th>
+    <th scope="col">Ten san pham</th>
+    <th scope="col">Gia tien</th>
+    <th scope="col">Don vi</th>
+    <th scope="col">So luong</th>
+    <th scope="col">Ngay nhap hang</th>
+    <th scope="col">Ngay san xuat</th>
+    <th scope="col">Ngay het han</th>
     <th scope="col">Action</th>
   </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let prod of products">
     <td scope="row">{{prod.id}}</td>
-    <td scope="row">{{prod.name | titlecase}}</td>
-    <td scope="row">{{prod.price}}</td>
-    <td scope="row">{{prod.status}}</td>
-    <td scope="row">{{prod.quantity}}</td>
     <td scope="row">{{prod.category.name}}</td>
+    <td scope="row">{{prod.category.price}}</td>
+    <td scope="row">{{prod.category.dv}}</td>
+    <td scope="row">{{prod.quantity}}</td>
+    <td scope="row">{{prod.nnh}}</td>
+    <td scope="row">{{prod.nsx}}</td>
+    <td scope="row">{{prod.nhh}}</td>
     <td>
-      <a (click)="openDialogDelete(prod.id)" style="background-color: #6f42c1; color: azure" scope="row" type="button" class="btn m-lg-1">
+      <a (click)="openDialogDelete(prod.id)" type="button" class="btn btn-danger">
         Delete
       </a>
-      <a style="background-color: #b21f2d; color: azure" type="button" class="btn m-lg-3" routerLink="edit/{{prod.id}}">Edit</a>
+      <button style = "margin-left: 20px" class="btn btn-warning">Edit</button>
     </td>
   </tr>
-  </thead>
+  </tbody>
 </table>
-<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->

@@ -1,11 +1,10 @@
 import {Category} from './Category';
 
-
 export interface Product {
-  id?: number;
-  name?: string;
-  price?: number;
-  quantity?: number;
-  status?: string;
-  category?: Category;
+  'id'?: string;
+  'category'?: Category;
+  'quantity'?: number;
+  'nnh'?: string;
+  'nsx'?: string;
+  'nhh'?: string;
 }

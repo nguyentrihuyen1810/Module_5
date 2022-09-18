@@ -11,8 +11,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ProductCreateComponent } from './product-create/product-create.component';
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductEditComponent } from './product-edit/product-edit.component';
-// import {NgxPaginationModule} from 'ngx-pagination';
+// import { ProductEditComponent } from './product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     ProductCreateComponent,
     ProductDeleteComponent,
     ProductListComponent,
-    ProductEditComponent,
+    // ProductEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +31,6 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
     MatSnackBarModule,
     MatDialogModule,
     FormsModule,
-    // NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

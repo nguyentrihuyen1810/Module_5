@@ -3,6 +3,7 @@ import {CategoryService} from '../../service/category.service';
 import {ProductService} from '../../service/product.service';
 import {MatDialog} from '@angular/material/dialog';
 import {ProductDeleteComponent} from '../product-delete/product-delete.component';
+// import {ProductDeleteComponent} from '../product-delete/product-delete.component';
 
 @Component({
   selector: 'app-product-list',
@@ -15,8 +16,6 @@ export class ProductListComponent implements OnInit {
   products: any = [];
   nameSearch: string;
 
-  categories: any = [];
-  nameTypeSearch: string;
 
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
@@ -43,7 +42,7 @@ export class ProductListComponent implements OnInit {
   }
 
   searchByName() {
-    this.productService.findByName(this.nameSearch).subscribe((data) => {
+    this.categoryService.findByName(this.nameSearch).subscribe((data) => {
       this.products = data;
     });
   }

@@ -1,0 +1,101 @@
+{
+  "product": [
+    {
+      "id": "LH-0001",
+      "lohang": {
+        "id": 1,
+        "name": "Sting",
+        "price": "250000",
+        "dv": "Thung"
+      },
+      "quantity": 5 ,
+      "nnh": "28/12/2020",
+      "nsx": "10/09/2020",
+      "nhh": "10/09/2021"
+    },
+    {
+      "id": "LH-0002",
+      "lohang": {
+        "id": 2,
+        "name": "Tiger",
+        "price": "220000",
+        "dv": "Thung"
+      },
+      "quantity": 5 ,
+      "nnh": "01/11/2020",
+      "nsx": "15/10/2020",
+      "nhh": "15/10/2021"
+    },
+    {
+      "id": "LH-0003",
+      "lohang": {
+        "id": 3,
+        "name": "Oshi",
+        "price": "100000",
+        "dv": "Thung"
+      },
+      "quantity": 5 ,
+      "nnh": "01/12/2020",
+      "nsx": "14/09/2020",
+      "nhh": "14/09/2021"
+    },
+    {
+      "id": "LH-0004",
+      "lohang": {
+        "id": 4,
+        "name": "Dau goi",
+        "price": "300000",
+        "dv": "Thung"
+      },
+      "quantity": 5 ,
+      "nnh": "28/12/2020",
+      "nsx": "10/09/2020",
+      "nhh": "10/09/2021"
+    },
+    {
+      "id": "LH-0005",
+      "lohang": {
+        "id": 5,
+        "name": "Larue",
+        "price": "210000",
+        "dv": "Thung"
+      },
+      "quantity": 5 ,
+      "nnh": "28/12/2020",
+      "nsx": "10/09/2020",
+      "nhh": "10/09/2021"
+    }
+  ],
+  "lohang": [
+    {
+      "id":1,
+      "name": "Sting",
+      "price": "250000",
+      "dv": "Thung"
+    },
+    {
+      "id":2,
+      "name": "Tiger",
+      "price": "220000",
+      "dv": "Thung"
+    },
+    {
+      "id":3,
+      "name": "Oshi",
+      "price": "100000",
+      "dv": "Thung"
+    },
+    {
+      "id":4,
+      "name": "Dau goi",
+      "price": "300000",
+      "dv": "Thung"
+    },
+    {
+      "id":5,
+      "name": "Larue",
+      "price": "210000",
+      "dv": "Thung"
+    }
+  ]
+}

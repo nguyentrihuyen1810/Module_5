@@ -15,7 +15,7 @@ export class CategoryService {
     return this.http.get<Category[]>(this.URL);
   }
 
-  findByType(nameSearch: string) {
+  findByName(nameSearch: string) {
     return this.http.get(this.URL + '?name_like=' + nameSearch );
   }
 }

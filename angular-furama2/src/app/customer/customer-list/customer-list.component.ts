@@ -41,6 +41,7 @@ export class CustomerListComponent implements OnInit {
   searchByName() {
     this.customerService.findByName(this.nameSearch).subscribe((data) => {
       this.customers = data;
+      this.p = 1;
     });
   }
 

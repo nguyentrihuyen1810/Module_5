@@ -1,0 +1,50 @@
+<h1 style = "text-align: center; color: lightseagreen; margin-top: 20px">Customer List</h1>
+<a routerLink="/create" class="btn btn-success" type="button">+ Add new customer</a>
+<!--<div class="form-inline" style = "margin-top: 20px">-->
+<!--  <input class="form-control mr-sm-2" type="search" [(ngModel)]="nameSearch">-->
+<!--  <button class="btn btn-outline-secondary" type="submit" (click)="searchByName()">Search</button>-->
+<!--</div>-->
+<table class="table table-hover" style="margin-top: 20px">
+  <thead style = "background: lightseagreen">
+  <tr>
+    <th scope="col">Ma lo hang</th>
+    <th scope="col">Ten san pham</th>
+    <th scope="col">Gia tien</th>
+    <th scope="col">Don vi</th>
+    <th scope="col">So luong</th>
+    <th scope="col">Ngay nhap hang</th>
+    <th scope="col">Ngay san xuat</th>
+    <th scope="col">Ngay het han</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of product | paginate: {itemsPerPage: 2, currentPage: p}; index as i">
+    <td scope="row">{{product.id}}</td>
+    <td scope="row">{{product.lohang.name}}</td>
+    <td scope="row">{{product.price}}</td>
+    <td scope="row">{{product.dv}}</td>
+    <td scope="row">{{product.quantity}}</td>
+    <td scope="row">{{product.nnh}}</td>
+    <td scope="row">{{product.nsx}}</td>
+    <td scope="row">{{product.nhh}}</td>
+    <td>
+<!--      <a (click)="openDialogDelete(customer.id)" type="button" class="btn btn-danger">-->
+<!--        Delete-->
+<!--      </a>-->
+<!--      <a style = "margin-left: 10px" type="button" class="btn btn-warning" routerLink="/edit/{{customer.id}}">Edit</a>-->
+    </td>
+  </tr>
+  <tbody>
+</table>
+<!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+
+<!--<nav aria-label="Page navigation example">-->
+<!--  <ul class="pagination">-->
+<!--    <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+<!--    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+<!--    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--    <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+<!--  </ul>-->
+<!--</nav>-->

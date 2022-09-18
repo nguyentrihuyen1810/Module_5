@@ -16,10 +16,10 @@ export class ProductCreateComponent implements OnInit {
 
   productForm: FormGroup = new FormGroup({
     id: new FormControl('', [Validators.required]),
-    name: new FormControl('', [Validators.required]),
-    price: new FormControl('', [Validators.required]),
-    status: new FormControl('', [Validators.required]),
     quantity: new FormControl('', [Validators.required]),
+    nnh: new FormControl('', [Validators.required]),
+    nsx: new FormControl('', [Validators.required]),
+    nhh: new FormControl('', [Validators.required]),
     category: new FormControl('', [Validators.required]),
   });
 
@@ -37,17 +37,20 @@ export class ProductCreateComponent implements OnInit {
   add() {
     const product: Product = {
       id: this.productForm.value.name,
-      name: this.productForm.value.name,
-      price: this.productForm.value.price,
       quantity: this.productForm.value.quantity,
-      status: this.productForm.value.status,
+      nnh: this.productForm.value.nnh,
+      nsx: this.productForm.value.nsx,
+      nhh: this.productForm.value.nhh,
       category: {
-        id: this.productForm.value.category
+        id: this.productForm.value.category,
+        // name: this.productForm.value.category,
+        // price: this.productForm.value.category,
+        // dv: this.productForm.value.category,
       }
     };
     this.productService.create(this.productForm.value).subscribe((res) => {
       this.router.navigateByUrl('');
-      this.snackBar.open('Create successfully!', 'ok');
+      this.snackBar.open('Create successfully!', 'OK');
     });
   }
 

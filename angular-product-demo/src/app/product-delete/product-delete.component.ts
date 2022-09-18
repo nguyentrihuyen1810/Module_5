@@ -19,8 +19,8 @@ export class ProductDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.data.datal);
-    this.nameD = this.data.datal.name;
-    this.idD = this.data.datal.id;
+    this.nameD = this.data.datal.id;
+    this.idD = this.data.datal.nnh;
   }
 
   delete() {
@@ -28,7 +28,7 @@ export class ProductDeleteComponent implements OnInit {
       (data) => {
         console.log('Success');
         this.dialogRef.close();
-        this.snackBar.open('Delete Successfully!', 'ok');
+        this.snackBar.open('Delete Successfully!', 'OK');
       });
   }
 }

@@ -32,7 +32,7 @@ export class EmployeeService {
     return this.http.put(`${this.API_URL}/${id}`, employee);
   }
 
-  findByName(nameSearch: string) {
-    return this.http.get(this.API_URL + '?customerName_like=' + nameSearch );
+  findByName(nameSearch: string, addressSearch: string) {
+    return this.http.get(this.API_URL + '?name_like=' + nameSearch + '?address_like=' + addressSearch);
   }
 }
