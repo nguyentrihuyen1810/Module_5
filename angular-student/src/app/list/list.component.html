@@ -1,0 +1,39 @@
+<h1 style = "text-align: center; color: lightseagreen; margin-top: 20px">Danh sach Sinh vien</h1>
+<a routerLink="create" class="btn btn-success" type="button">+ Add new customer</a>
+<div class="form-inline" style = "margin-top: 20px">
+  <input class="form-control mr-sm-2" type="search" placeholder="Nhap thong tin can tim" [(ngModel)]="data">
+  <!--  <button class="btn btn-outline-secondary" type="submit" (click)="searchByName()">Search</button>-->
+</div>
+<table class="table table-hover" style="margin-top: 20px">
+  <thead style = "background: lightseagreen">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Ten sinh vien</th>
+    <th scope="col">Ten nhom</th>
+    <th scope="col">Ten de tai</th>
+    <th scope="col">Giao vien huong dan</th>
+    <th scope="col">Email</th>
+    <th scope="col">So dien thoai</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students | paginate: { itemsPerPage: 5, currentPage: p }| filter: data">
+    <td scope="row">{{student.id}}</td>
+    <td scope="row">{{student.name | titlecase}}</td>
+    <td scope="row">{{student.group}}</td>
+    <td scope="row">{{student.detai}}</td>
+    <td scope="row">{{student.teacher.name}}</td>
+    <td scope="row">{{student.email}}</td>
+    <td scope="row">{{student.phone}}</td>
+    <td>
+      <a (click)="openDialogDelete(student.id)" type="button" class="btn btn-danger">
+        Delete
+      </a>
+      <a style = "margin-left: 10px" type="button" class="btn btn-warning" routerLink="edit/{{student.id}}">Edit</a>
+    </td>
+  </tr>
+  <tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+

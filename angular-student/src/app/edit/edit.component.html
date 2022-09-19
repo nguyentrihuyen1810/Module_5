@@ -1,0 +1,74 @@
+<h2>Sua thong tin sinh vien</h2>
+<div class="col-6">
+  <form [formGroup]="studentEditForm" (ngSubmit)="update()">
+    <div class="form-group">
+      <label>Ten sinh vien:</label>
+      <input class="form-control" type = "text" formControlName = "name">
+      <div *ngIf="studentEditForm.get('name')?.invalid && (studentEditForm.get('name')?.touched || studentEditForm.get('name')?.dirty)">
+        <div [hidden]="!studentEditForm.get('name').errors.required">
+          <small style="color: red">Ten sinh vien khong duoc de trong</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Ten nhom:</label>
+      <input class="form-control" type = "text" formControlName = "group">
+      <div *ngIf="studentEditForm.get('group')?.invalid && (studentEditForm.get('group')?.touched || studentEditForm.get('group')?.dirty)">
+        <div [hidden]="!studentEditForm.get('group').errors.required">
+          <small style="color: red">Ten nhom khong duoc de trong</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Ten de tai:</label>
+      <input class="form-control" type = "text" formControlName = "detai">
+      <div *ngIf="studentEditForm.get('detai')?.invalid && (studentEditForm.get('detai')?.touched || studentEditForm.get('detai')?.dirty)">
+        <div [hidden]="!studentEditForm.get('detai').errors.required">
+          <small style="color: red">Ten de tai khong duoc de trong</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Giao vien huong dan: </label>
+      <select class="form-control" id="class" formControlName="teacher">
+        <option *ngFor ="let tch of teacher" [ngValue] = "tch">{{tch.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input class="form-control" type = "text" formControlName = "email">
+      <div *ngIf="studentEditForm.get('email')?.invalid && (studentEditForm.get('email')?.touched || studentEditForm.get('email')?.dirty)">
+        <div [hidden]="!studentEditForm.get('email').errors.required">
+          <small style="color: red">Email khong duoc de trong</small>
+        </div>
+      </div>
+      <div *ngIf="studentEditForm.get('email')?.invalid && (studentEditForm.get('email')?.touched || studentEditForm.get('email')?.dirty)">
+        <div [hidden]="!studentEditForm.get('email').errors.pattern">
+          <small style="color: red">Email phai dung dinh dang acb@def.com</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>So dien thoai:</label>
+      <input class="form-control" type = "text" formControlName = "phone">
+      <div *ngIf="studentEditForm.get('phone')?.invalid && (studentEditForm.get('phone')?.touched || studentEditForm.get('phone')?.dirty)">
+        <div [hidden]="!studentEditForm.get('phone').errors.required">
+          <small style="color: red">So dien thoai khong duoc de trong</small>
+        </div>
+      </div>
+      <div *ngIf="studentEditForm.get('phone')?.invalid && (studentEditForm.get('phone')?.touched || studentEditForm.get('phone')?.dirty)">
+        <div [hidden]="!studentEditForm.get('phone').errors.pattern">
+          <small style="color: red">So dien thoai phai dung dinh dang 10-12 so</small>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-success" type = "submit">Create</button>
+    <button style = "margin-left: 20px" class="btn btn-warning" type= "reset">Reset</button>
+  </form>
+</div>

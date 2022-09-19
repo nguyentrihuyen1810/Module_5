@@ -1,0 +1,41 @@
+<!--<h2>Create Customer</h2>-->
+<!--<div>-->
+<!--  <form [formGroup]="studentAddForm" (ngSubmit)="add()">-->
+<!--    <div>-->
+<!--      <label>Student Name:</label>-->
+<!--      <input type = "text" formControlName = "name">-->
+<!--      <div *ngIf="studentAddForm.get('name')?.invalid && (studentAddForm.get('name')?.touched || studentAddForm.get('name')?.dirty)">-->
+<!--        <div [hidden]="!studentAddForm.get('name').errors.required">-->
+<!--          <small>Student name khong duoc de trong</small>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--      <label>Birthday:</label>-->
+<!--      <input type = "text" formControlName = "birthday">-->
+<!--      <div *ngIf="studentAddForm.get('birthday')?.invalid && (studentAddForm.get('birthday')?.touched || studentAddForm.get('birthday')?.dirty)">-->
+<!--        <div [hidden]="!studentAddForm.get('birthday').errors.required">-->
+<!--          <small>Birthday khong duoc de trong</small>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--      <label>Gender:</label>-->
+<!--      <div *ngFor = "let gender of genders">-->
+<!--        <label><input type="radio" formControlName = "gender" [value]="gender">{{gender}}</label>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--      <label>Class: </label>-->
+<!--      <select id="class" formControlName="class">-->
+<!--        <option *ngFor ="let cls of class" [ngValue] = "cls">{{cls.name}}</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    <button class="btn btn-success" type = "submit">Create</button>-->
+<!--    <button class="btn btn-warning" type= "reset">Reset</button>-->
+<!--  </form>-->
+<!--</div>-->

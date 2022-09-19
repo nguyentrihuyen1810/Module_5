@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CustomerService} from '../../service/customer.service';
-import {CustomerTypeService} from '../../service/customer-type.service';
 import {MatDialog} from '@angular/material/dialog';
+import {StudentService} from '../../service/student.service';
+import {TeacherService} from '../../service/teacher.service';
 import {DeleteComponent} from '../delete/delete.component';
 
 @Component({
@@ -10,24 +10,25 @@ import {DeleteComponent} from '../delete/delete.component';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
+
   p = 1;
-  customers: any = [];
+  students: any = [];
   nameSearch: string;
   data: string;
 
-  constructor(private customerService: CustomerService,
-              private customerTypeService: CustomerTypeService,
+  constructor(private studentService: StudentService,
+              private teacherService: TeacherService,
               private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.customerService.getAll().subscribe(
+    this.studentService.getAll().subscribe(
       (res) => {
-        this.customers = res;
+        this.students = res;
       });
   }
 
   openDialogDelete(customerId: number) {
-    this.customerService.findById(customerId).subscribe(
+    this.studentService.findById(customerId).subscribe(
       (data) => {
         const dialogRef = this.dialog.open(DeleteComponent, {
           width: '700px',
@@ -40,8 +41,8 @@ export class ListComponent implements OnInit {
   }
 
   searchByName() {
-    this.customerService.findByName(this.nameSearch).subscribe((data) => {
-      this.customers = data;
+    this.studentService.findByName(this.nameSearch).subscribe((data) => {
+      this.students = data;
     });
   }
 
